@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="menu-container">
+        <div class="menu-page" id="page1">
+            <h1>Entradas</h1>
+            <div id="items1"></div>
+            <button onclick="editItems(1)">Editar</button>
+        </div>
+        <div class="menu-page" id="page2">
+            <h1>Platos Principales</h1>
+            <div id="items2"></div>
+            <button onclick="editItems(2)">Editar</button>
+        </div>
+        <div class="menu-page" id="page3">
+            <h1>Postres</h1>
+            <div id="items3"></div>
+            <button onclick="editItems(3)">Editar</button>
+        </div>
+        <div class="menu-navigation">
+            <button class="nav-button" onclick="prevPage()">&#9664;</button>
+            <button class="nav-button" onclick="nextPage()">&#9654;</button>
+        </div>
+    </div>
+
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Editar Items</h2>
+            <form id="editForm">
+                <input type="hidden" id="pageNumber" name="pageNumber">
+                <textarea id="itemsTextarea" name="items" rows="10" cols="50"></textarea>
+                <button type="button" onclick="saveItems()">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
